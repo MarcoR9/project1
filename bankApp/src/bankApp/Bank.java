@@ -25,7 +25,8 @@ public class Bank {
 		accounts.add(n5578);
 		accounts.add(n2544);
 		
-		
+		//WARNING: for the first run comment this part of the code below
+		//--------------------------------------------------------------------------------------
 		try {  //Load file saved                                        //INSERT FILE SOURCE
 			FileInputStream fileIn=new FileInputStream("C:\\Users\\Marco\\Desktop\\eclipse-workspace\\bankApp\\bankFile");
 			ObjectInputStream in= new ObjectInputStream(fileIn);
@@ -35,6 +36,7 @@ public class Bank {
 			System.out.println("ERROR: FILE TO LOAD NOT FOUND");
 			e1.printStackTrace();
 		}
+		//--------------------------------------------------------------------------------------
 		
 		
 		Scanner scan=new Scanner(System.in);
