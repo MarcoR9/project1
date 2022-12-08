@@ -69,12 +69,22 @@ public class BankAccount implements Serializable{
 		System.out.println("********************");
 		System.out.println("Insert pin:");
 		String p=scan.nextLine();
-		if(p.equals(pin)) {
-			System.out.println("PIN: OK");
-		}else {
-			System.out.println("ACCESS DENIED");
-			scan.close();
-			System.exit(0);
+		int tryCount=0;
+		
+		for(int i=0;i<3;i++){
+			if(p.equals(pin)) {
+				System.out.println("PIN: OK");
+				break;
+			}else {
+				tryCount++;
+				if(tryCount>=3){
+					System.out.println("ACCESS DENIED");
+					scan.close();
+				System.exit(0);
+				}
+				System.out.println("PLEASE TRY AGAIN: ("+(3-tryCount)+" attempt"+((3-tryCount)<=1 ? " ":"s ")+"left)");
+				p=scan.nextLine();
+			}
 		}
 	}
 
